@@ -44,8 +44,8 @@ class EchoTTSService(TTSService):
         *,
         server_url: Optional[str] = None,
         voice: str = "expresso_02_ex03-ex01_calm_005",
-        cfg_scale_text: float = 3.0,
-        cfg_scale_speaker: float = 8.0,
+        cfg_scale_text: float = 2.5,
+        cfg_scale_speaker: float = 5.0,
         seed: int = 0,
         sample_rate: int = 44100,
         **kwargs,
@@ -57,8 +57,8 @@ class EchoTTSService(TTSService):
             server_url: WebSocket URL of Echo TTS server (e.g., "ws://localhost:8000")
                        If not provided, uses ECHO_SERVER_URL env var.
             voice: Voice name from audio_prompts/ directory
-            cfg_scale_text: Text classifier-free guidance scale (default: 3.0)
-            cfg_scale_speaker: Speaker classifier-free guidance scale (default: 8.0)
+            cfg_scale_text: Text classifier-free guidance scale (default: 2.5)
+            cfg_scale_speaker: Speaker classifier-free guidance scale (default: 5.0)
             seed: Random seed for reproducibility (default: 0)
             sample_rate: Audio sample rate in Hz (default: 44100)
         """

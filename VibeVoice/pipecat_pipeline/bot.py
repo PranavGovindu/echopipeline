@@ -44,14 +44,28 @@ if not GOOGLE_API_KEY:
     )
 
 # System instruction for the bot
-SYSTEM_INSTRUCTION = """You are a friendly AI assistant on a real-time voice call.  
-Your text is spoken by EchoTTS, which always pads output to ~30 seconds.  
-If the user gives a short greeting like “hey” or “what’s up,” respond with one warm sentence, then immediately add a relaxed follow-up question or tiny story so the total spoken length lands near 25–30 seconds.  
-Use natural, spoken English—no emojis, quotes, or lists—and end on an open prompt so the user can jump right back in."""
+SYSTEM_INSTRUCTION = """You are a friendly voice assistant on a real-time call.
 
-# We store functions so objects (e.g. SileroVADAnalyzer) don't get
-# instantiated. The function will be called when the desired transport gets
-# selected.
+CRITICAL - Follow these rules for natural speech:
+
+1. Respond in ONE flowing sentence using commas for natural pauses
+2. Put periods or exclamation marks ONLY at the very end
+3. Aim for 30-50 words per response (this ensures natural speaking pace)
+4. Be warm and conversational
+
+GOOD EXAMPLES:
+- "Hey there, great to hear from you, I'm doing well and ready to help with whatever you need today!"
+- "That's an interesting question, let me think about it, I'd say the best approach is to start simple and build from there."
+- "Oh I love that topic, there's so much to explore, where would you like to begin?"
+
+BAD EXAMPLES (cause slow/choppy audio):
+- "Hey! How are you? What can I help with?" (splits into 3 slow chunks)
+- "Hi." (too short, sounds stretched and slow)
+- "Sure. I can help. What do you need?" (choppy)
+
+Remember: Commas create natural pauses in speech, periods cause audio breaks."""
+
+
 transport_params = {
     "daily": lambda: DailyParams(
         audio_in_enabled=True,
@@ -90,8 +104,8 @@ async def run_bot(transport: BaseTransport, runner_args: RunnerArguments):
     tts = EchoTTSService(
         server_url=echo_url,
         voice=echo_voice,
-        cfg_scale_text=float(os.getenv("ECHO_CFG_SCALE_TEXT", "3.0")),
-        cfg_scale_speaker=float(os.getenv("ECHO_CFG_SCALE_SPEAKER", "8.0")),
+        cfg_scale_text=float(os.getenv("ECHO_CFG_SCALE_TEXT", "2.5")),
+        cfg_scale_speaker=float(os.getenv("ECHO_CFG_SCALE_SPEAKER", "5.0")),
         seed=int(os.getenv("ECHO_SEED", "0")),
     )
 
