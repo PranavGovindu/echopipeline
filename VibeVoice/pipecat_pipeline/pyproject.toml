@@ -1,7 +1,7 @@
 [project]
-name = "vibevoice-pipecat-agent"
-version = "0.1.0"
-description = "Pipecat voice agent with Gemini STT/LLM and VibeVoice TTS"
+name = "echo-pipecat-agent"
+version = "0.2.0"
+description = "Pipecat voice agent with Gemini STT/LLM and Echo TTS"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
@@ -24,6 +24,7 @@ build-backend = "hatchling.build"
 # Just include the Python files
 only-include = [
     "bot.py",
+    "custom_echo_tts_service.py",
     "custom_vibevoice_tts_service.py",
     "test_local.py",
 ]
