@@ -86,7 +86,7 @@ async def run_bot(transport: BaseTransport, runner_args: RunnerArguments):
 
     # Echo TTS
     echo_url = os.getenv("ECHO_SERVER_URL", "ws://localhost:8000")
-    echo_voice = os.getenv("ECHO_VOICE", "expresso_02_ex03-ex01_calm_005")
+    echo_voice = os.getenv("ECHO_VOICE", "elise")
 
     tts = EchoTTSService(
         server_url=echo_url,
