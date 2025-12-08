@@ -80,8 +80,8 @@ WARMUP_VOICE = os.getenv("ECHO_WARMUP_VOICE")
 WARMUP_TEXT = os.getenv("ECHO_WARMUP_TEXT", "[S1] Warmup compile run.")
 # Chunking config (wiring TBD; previewed in scripts/chunk_preview.py)
 CHUNKING_ENABLED = os.getenv("ECHO_CHUNKING", "1") == "1"
-CHUNK_CHARS_PER_SECOND = float(os.getenv("ECHO_CHUNK_CHARS_PER_SECOND", "14"))
-CHUNK_WORDS_PER_SECOND = float(os.getenv("ECHO_CHUNK_WORDS_PER_SECOND", "2.7"))
+CHUNK_CHARS_PER_SECOND = float(os.getenv("ECHO_CHUNK_CHARS_PER_SECOND", "17"))
+CHUNK_WORDS_PER_SECOND = float(os.getenv("ECHO_CHUNK_WORDS_PER_SECOND", "3.2"))
 NORMALIZE_EXCLAMATION = os.getenv("ECHO_NORMALIZE_EXCLAMATION", "1") == "1"
 MAX_SPEAKER_LATENT_LENGTH = int(os.getenv("ECHO_MAX_SPEAKER_LATENT_LENGTH", "6400"))
 FOLDER_SUPPORT = os.getenv("ECHO_FOLDER_SUPPORT", "1") == "1"
