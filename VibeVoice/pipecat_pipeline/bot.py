@@ -48,7 +48,7 @@ SYSTEM_INSTRUCTION = """You are a friendly AI assistant in a voice call.
 Your output will be spoken aloud with TTS, so keep responses natural and conversational.
 Avoid special characters that can't easily be spoken, such as emojis or bullet points.
 Respond to what the user said in a creative and helpful way.
-Keep responses concise - around 1-2 sentences unless the user asks for more detail."""
+Keep responses concise - around 5-6 sentences unless the user asks for more detail."""
 
 # We store functions so objects (e.g. SileroVADAnalyzer) don't get
 # instantiated. The function will be called when the desired transport gets
