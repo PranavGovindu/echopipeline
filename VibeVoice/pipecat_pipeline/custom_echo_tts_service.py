@@ -174,11 +174,13 @@ class EchoTTSService(TTSService):
 
         try:
             # Connect to Echo TTS server
+            # max_size=None removes the message size limit (Echo can send large audio chunks)
             async with websockets.connect(
                 ws_url,
                 ping_interval=20,
                 ping_timeout=20,
                 close_timeout=10,
+                max_size=None,  # Remove 1MB limit for large audio chunks
             ) as websocket:
                 self._websocket = websocket
                 
