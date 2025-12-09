@@ -14,5 +14,6 @@ RUN --mount=type=cache,target=/root/.cache/uv \
 
 # Copy the application code
 COPY ./bot.py bot.py
+COPY ./custom_echo_tts_service.py custom_echo_tts_service.py
 COPY ./custom_vibevoice_tts_service.py custom_vibevoice_tts_service.py
 

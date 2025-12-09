@@ -1,9 +1,9 @@
 # Pipecat Cloud Deployment Configuration
 # Update these values for your deployment
 
-agent_name = "vibevoice-agent"
-image = "your-dockerhub-username/vibevoice-pipecat-agent:latest"
-secret_set = "vibevoice-secrets"  # Create this in Pipecat Cloud with your API keys
+agent_name = "echo-tts-agent"
+image = "your-dockerhub-username/echo-pipecat-agent:latest"
+secret_set = "echo-secrets"  # Create this in Pipecat Cloud with GOOGLE_API_KEY and ECHO_SERVER_URL
 agent_profile = "agent-2x"
 
 [krisp_viva]
